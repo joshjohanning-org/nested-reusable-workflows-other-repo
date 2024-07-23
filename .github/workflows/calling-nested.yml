@@ -1,0 +1,14 @@
+name: nested reusable workflows
+
+on:
+  workflow_dispatch:
+  
+env:
+  python-version: 3.10
+
+jobs:
+  job1:
+    uses: joshjohanning-org/nested-reusable-workflows/.github/workflows/nested1.yml@main
+    with:
+      python-version: ${{ vars.PYTHON_VERSION }}
+  
